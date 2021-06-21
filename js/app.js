@@ -103,5 +103,5 @@ window.addEventListener('scroll', ()=> {
 })
 
 backToTop.addEventListener('click', ()=> {
-    window.scrollIntoView({behaviour:'smooth'})
+    document.documentElement.scrollTop = 0;)
 })
