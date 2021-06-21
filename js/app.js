@@ -17,7 +17,9 @@
  * Define Global Variables
  * 
 */
-const navBar = document.querySelector('#navbar__list');
+const pageHeader = document.querySelector('.page__header');
+const navBar = document.querySelector('.navbar__menu');
+const navBarList = document.querySelector('#navbar__list');
 const sectionsList = document.querySelectorAll('section');
 //using fragment to optimize performance
 const fragment = document.createDocumentFragment();
@@ -53,18 +55,21 @@ for (const sect of sectionsList) {
 }
 
 //appending the content of the fragment to the navigattion bar to make things work
-navBar.appendChild(fragment);
+navBarList.appendChild(fragment);
 
 const wholelist = document.querySelectorAll('li');
 
 
 
 // Add class 'active' to section when near top of viewport
+
+// Scroll to section on link click
 onscroll = function() {
     var viewPosition = document.documentElement.scrollTop
 
     sectionsList.forEach(section => {
         if (viewPosition >= section.offsetTop-200 && viewPosition < (section.offsetTop-300 + section.offsetHeight)) {
+            // Set sections as active
             section.classList.add('active');
             console.log(section.className)
         } else {
@@ -84,6 +89,19 @@ onscroll = function() {
 
 // Build menu 
 
-// Scroll to section on link click
 
-// Set sections as active
+// Back to top code functionality
+
+const backToTop = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', ()=> {
+    if (window.pageYOffset > 150) {
+        backToTop.classList.add('active');
+    } else {
+        backToTop.classList.remove('active');
+    }
+})
+
+backToTop.addEventListener('click', ()=> {
+    window.scrollIntoView({behaviour:'smooth'})
+})
