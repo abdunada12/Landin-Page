@@ -1,7 +1,2 @@
 # Landing Page Project
----
-
-## Table of Contents
-
-* [Instructions](#instructions)
-
+This project is a landing project exercise for the front-end nanodegree program
