@@ -103,5 +103,5 @@ window.addEventListener('scroll', ()=> {
 })
 
 backToTop.addEventListener('click', ()=> {
-    document.documentElement.scrollTop = 0;)
+    document.documentElement.scrollTop = 0;
 })
