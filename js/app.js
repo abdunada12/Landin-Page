@@ -51,11 +51,10 @@ for (const sect of sectionsList) {
     li.addEventListener('click', ()=> {
         sect.scrollIntoView({behavior:'smooth'});
     })
-
+  navBarList.appendChild(fragment);
 }
 
 //appending the content of the fragment to the navigattion bar to make things work
-navBarList.appendChild(fragment);
 
 const wholelist = document.querySelectorAll('li');
 
@@ -100,8 +99,4 @@ window.addEventListener('scroll', ()=> {
     } else {
         backToTop.classList.remove('active');
     }
-})
-
-backToTop.addEventListener('click', ()=> {
-    document.documentElement.scrollTop = 0;
 })
